@@ -1,9 +1,15 @@
 name: "Acción de prueba"
 description: "Una acción de prueba"
 
+inputs:
+    message:
+        description: "Un mensaje para mostrar"
+        required: true
+        default: "Hola bb!"
+
 runs:
     using: "composite"
     steps:
         - name: Hola Mundo!
-          run: echo "Hola Mundo!"
+          run: echo "Hola ${{ inputs.message }}"
           shell: bash
