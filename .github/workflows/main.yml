@@ -1,16 +1,14 @@
-name: Test
+name: Test Composite Action
 
 on: [push]
 
 jobs:
-    test-build:
+    local-action:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout
-              uses: actions/checkout@v4.2.2
+          - name: Checkout code
+            uses: actions/checkout@v4.2.2
 
-            - name: ls
-              run: |
-                chmod +x ./script.sh
-                ./script.sh
+          - name: ls
+            uses: ./.github/actions/my-action
