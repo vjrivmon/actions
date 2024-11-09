@@ -6,18 +6,20 @@ jobs:
     say-hello:
         runs-on: ubuntu-latest
 
-        services:
-            mysql:
-                image: mysql:5.7
-                env:
-                    MYSQL_ROOT_PASSWORD: root
-                ports:
-                    - 3306:3306
-            redis:
-                image: redis
-                ports:
-                    - 6379:6379
+        # services:
+        #     mysql:
+        #         image: mysql:5.7
+        #         env:
+        #             MYSQL_ROOT_PASSWORD: root
+        #         ports:
+        #             - 3306:3306
+        #     redis:
+        #         image: redis
+        #         ports:
+        #             - 6379:6379
+        env:
+            MY_VAR: Mi variable de entorno
                 
         steps:
             - name: Testeo
-              run: ls
+              run: "echo 'Valor: $MY_VAR'"
