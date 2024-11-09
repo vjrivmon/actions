@@ -12,3 +12,4 @@ jobs:
 
           - name: ls
             uses: ./.github/actions/my-action
+            
