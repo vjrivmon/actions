@@ -22,4 +22,6 @@ jobs:
                 
         steps:
             - name: Testeo
-              run: echo "Valor $MY_VAR"
+              env:
+                STEP_MY_VAR: Nivel Step
+              run: echo "Valor $STEP_MY_VAR"
