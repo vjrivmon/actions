@@ -22,4 +22,4 @@ jobs:
                 
         steps:
             - name: Testeo
-              run: "echo 'Valor: $MY_VAR'"
+              run: echo "Valor $MY_VAR"
